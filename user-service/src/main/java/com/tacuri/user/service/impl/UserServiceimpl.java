@@ -5,6 +5,7 @@ import java.util.List;
 import org.springframework.stereotype.Service;
 
 import com.tacuri.user.domain.User;
+import com.tacuri.user.entity.UserEntity;
 import com.tacuri.user.mapper.UserEntityMapper;
 import com.tacuri.user.repository.UserEntityRepository;
 import com.tacuri.user.service.UserService;
@@ -24,8 +25,8 @@ public class UserServiceimpl implements UserService{
 
     @Override
     public User save(User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'save'");
+        UserEntity userEntity = UserEntityMapper.INSTANCE.toEntity(user);
+        return UserEntityMapper.INSTANCE.toDomain(userEntityRepository.save(userEntity));
     }
     
 }

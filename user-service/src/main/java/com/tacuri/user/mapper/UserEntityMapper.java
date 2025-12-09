@@ -2,11 +2,13 @@ package com.tacuri.user.mapper;
 
 import java.util.List;
 
+import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;
 
 import com.tacuri.user.domain.User;
 import com.tacuri.user.entity.UserEntity;
 
+@Mapper(componentModel = "spring")
 public interface UserEntityMapper {
 
     UserEntityMapper INSTANCE = Mappers.getMapper(UserEntityMapper.class);
